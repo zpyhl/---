@@ -958,6 +958,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     content:"\e915";
     font-size: 33px;
 }
+
 .wjs_product .product_box_left{
     position: relative;
     overflow: hidden;
@@ -980,11 +981,47 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     text-align: center;
     border-left:1px dashed #ccc;
 }
+/* .wjs_product .wjs_product_box.active .product_box_right p:first-of-type {
+    color:#fff;
+} */
+.wjs_product .product_box_right .tool_tips {
+    position: absolute;
+    padding-top:5px;
+    width:100%;
+}
+.wjs_product .product_box_right .red,
+.wjs_product .product_box_right .green {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 12px;
+    border: 1px solid transparent;
+}
+.wjs_product .product_box_right .red {
+    color:red;
+    border-color:red;
+}
+.wjs_product .product_box_right .green {
+    color:green;
+    border-color:green;
+}
 .wjs_product .product_box_right p:first-of-type {
     margin-top: 20px;
 }
+.wjs_product .wjs_product_box.active .product_box_right p:first-of-type b{
+    color:#fff;
+}
+.wjs_product .wjs_product_box.active .product_box_right p:first-of-type sub{
+    color:#fff;
+}
 .wjs_product .product_box_right p:first-of-type b {
     font-size: 50px;
+    color:#e92322;
+}
+.wjs_product .product_box_right p:first-of-type sub {
+    color:#e92322;
 }
 .wjs_product .product_box_right::before{
     position:absolute;
@@ -1039,56 +1076,112 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     border:none;
     border-bottom:3px solid #e92322;
   }
-  .wjs_product .nav-tabs.nav-justified {
-    width: 100%;
-    border-bottom: 0;
-  }
-  .wjs_product .nav-tabs.nav-justified > li {
-    float: none;
-  }
-  .wjs_product .nav-tabs.nav-justified > li > a {
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  .wjs_product .nav-tabs.nav-justified > .dropdown .dropdown-menu {
-    top: auto;
-    left: auto;
-  }
-  @media (min-width: 768px) {
-    .wjs_product .nav-tabs.nav-justified > li {
-      display: table-cell;
-      width: 1%;
-    }
-    .wjs_product .nav-tabs.nav-justified > li > a {
-      margin-bottom: 0;
-    }
-  }
-  .wjs_product .nav-tabs.nav-justified > li > a {
-    margin-right: 0;
-    border-radius: 4px;
-  }
-  .wjs_product .nav-tabs.nav-justified > .active > a,
-  .wjs_product .nav-tabs.nav-justified > .active > a:hover,
-  .wjs_product .nav-tabs.nav-justified > .active > a:focus {
-    border: 1px solid #ddd;
-  }
-  @media (min-width: 768px) {
-    .wjs_product .nav-tabs.nav-justified > li > a {
-      border-bottom: 1px solid #ddd;
-      border-radius: 4px 4px 0 0;
-    }
-    .wjs_product .nav-tabs.nav-justified > .active > a,
-    .wjs_product .nav-tabs.nav-justified > .active > a:hover,
-    .wjs_product .nav-tabs.nav-justified > .active > a:focus {
-      border-bottom-color: #fff;
-    }
-  }
-  .wjs_product .tab-content {
-      /* padding:20px 0; */
-  }
   .wjs_product .tab-content > .tab-pane {
     display: none;
   }
   .wjs_product .tab-content > .active {
     display: block;
   }
+
+  /* 新闻模块样式 */
+  .wjs_news {
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+  }
+  .wjs_news  .wjs_news_tit {
+    position: relative;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  .wjs_news  .wjs_news_tit h3 {
+      font-size: 20px;
+  }
+  .wjs_news  .wjs_news_tit::after {
+    position: absolute;
+    right: -6px;
+    bottom:-3px;
+    content:"";
+    width: 6px;
+    height: 6px;
+    border:1px solid #ccc;
+    border-radius: 50%;
+  }
+  .wjs_news .wjs_news_line {
+    position: absolute;
+    left:45px;
+    top:0;
+    height:100%;
+    border-left:1px dashed #ccc;
+}
+  .wjs_news .nav-tabs {
+    position: relative;
+    border:none;
+  }
+  .wjs_news .nav-tabs > li {
+    float: left;
+  }
+  .wjs_news .nav-tabs > li > a {
+    margin-bottom:60px;
+    display:block;
+    width: 60px;
+    height: 60px;
+    line-height: 40px;
+    text-align: center;
+    border:none;
+    border-radius:50%;
+    background-color: #ccc;
+  }
+  .wjs_news .nav-tabs > li:last-child > a {
+    margin-bottom:0;
+  }
+  .wjs_news .nav-tabs > li > a > span {
+      font-size: 28px;
+      color:#fff;
+  }
+  .wjs_news .nav-tabs > li > a:hover {
+    border:none;
+    background-color: #e92322;
+  }
+  .wjs_news .nav-tabs > li.active > a,
+  .wjs_news .nav-tabs > li.active > a:hover,
+  .wjs_news .nav-tabs > li.active > a:focus {
+    display:block;
+    width: 60px;
+    height: 60px;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border-radius:50%;
+    background-color:#e92322;
+  }
+  @media (max-width:992px) {
+    .wjs_news .nav-tabs {
+        padding-top:20px;
+        padding-bottom:10px;
+    }
+    .wjs_news .nav-tabs > li {
+        padding:10px 40px;
+    }
+    .wjs_news .tab-content {
+        margin-top: -20px;;
+    }
+  }
+  .wjs_news .tab-content > .tab-pane {
+    display: none;
+  }
+  .wjs_news .tab-content > .active {
+    display: block;
+  }
+  .wjs_news .tab-content a {
+      display: block;
+      padding: 15px;
+  }
+
+/* 合作伙伴样式 */
+.wjs_partner {
+    padding:15px 0;
+    text-align: center;
+}
+.wjs_partner a {
+    font-size: 80px;
+    padding: 20px;
+}
